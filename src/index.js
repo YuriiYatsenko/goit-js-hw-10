@@ -1,6 +1,5 @@
-
+import { createCountryList, createCountryInfo } from './createCountryInfo';
 import debounce from 'lodash.debounce';
-import { createCountryList, createCountryInfo } from './createMarkup';
 import { fetchCountries } from './fetchCountries';
 import Notiflix from 'notiflix';
 
@@ -44,4 +43,4 @@ const handleSearch = debounce(async () => {
   }
 }, DEBOUNCE_DELAY);
 
-searchBox.addEventListener('input', handleSearch); 
+searchBox.addEventListener('input', handleSearch);
