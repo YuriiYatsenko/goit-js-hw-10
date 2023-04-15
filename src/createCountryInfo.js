@@ -18,7 +18,7 @@ export const createCountryInfo = (country, container) => {
           <p><span class="data-label">Languages:</span> ${languagesList}</p>
         </div>
       </div>
-    `;
+    </div>`;
 
     container.innerHTML = markup;
   } catch (error) {
@@ -26,3 +26,9 @@ export const createCountryInfo = (country, container) => {
     container.innerHTML = '<p>Unable to display country information.</p>';
   }
 };
+
+export function createCountryList(countries, container) {
+  const markup = countries.map(({ name }) => `<li>${name.common}</li>`).join('');
+
+  container.innerHTML = `<ul>${markup}</ul>`;
+}

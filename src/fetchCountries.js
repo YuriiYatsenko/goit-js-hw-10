@@ -1,4 +1,3 @@
-
 const BASE_URL = 'https://restcountries.com/v2/name';
 
 export const fetchCountries = async (searchQuery) => {
@@ -10,3 +9,4 @@ export const fetchCountries = async (searchQuery) => {
     throw new Error('Error fetching data');
   }
 };
+

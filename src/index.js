@@ -1,7 +1,7 @@
-import { createCountryList, createCountryInfo } from './createCountryInfo';
-import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
-import Notiflix from 'notiflix';
+import { createCountryInfo, createCountryList } from './createCountryInfo';
+import debounce from 'lodash.debounce';
+import { Notify } from 'notiflix';
 
 const searchBox = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
@@ -22,7 +22,7 @@ const handleSearch = debounce(async () => {
     const data = await fetchCountries(searchQuery);
 
     if (data.length > 10) {
-      Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
+      Notify.info('Too many matches found. Please enter a more specific name.');
       countryList.innerHTML = '';
       countryInfo.innerHTML = '';
       return;
@@ -38,9 +38,10 @@ const handleSearch = debounce(async () => {
     createCountryList(data, countryList);
     countryInfo.innerHTML = '';
   } catch (error) {
-    Notiflix.Notify.failure('Oops, something went wrong. Please try again later!');
+    Notify.failure('Oops, something went wrong. Please try again later!');
     console.log(error);
   }
 }, DEBOUNCE_DELAY);
 
 searchBox.addEventListener('input', handleSearch);
+
