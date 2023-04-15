@@ -44,4 +44,4 @@ const handleSearch = debounce(async () => {
   }
 }, DEBOUNCE_DELAY);
 
-searchBox.addEventListener('input', handleSearch);
+searchBox.addEventListener('input', handleSearch); 
