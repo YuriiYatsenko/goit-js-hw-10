@@ -1,8 +1,14 @@
 const BASE_URL = 'https://restcountries.com/v2/name';
 
 export const fetchCountries = async (searchQuery) => {
+  if (typeof searchQuery !== 'string' || searchQuery.length === 0) {
+    throw new Error('Invalid search query');
+  }
+
+  const encodedSearchQuery = encodeURIComponent(searchQuery);
+
   try {
-    const response = await fetch(`${BASE_URL}/${searchQuery}?fields=name,flags.svg,capital,population,languages`);
+    const response = await fetch(`${BASE_URL}/${encodedSearchQuery}?fields=name,flags.svg,capital,population,languages`);
     const data = await response.json();
     return data;
   } catch (error) {
