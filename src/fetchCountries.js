@@ -15,4 +15,3 @@ export const fetchCountries = async (searchQuery) => {
     throw new Error('Error fetching data');
   }
 };
-
