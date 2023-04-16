@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 10</title>
-  </head>
-  <body>
-    <input type="text" id="search-box" />
-    <ul class="country-list"></ul>
-    <div class="country-info"></div>
 
-    <script src="index.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework 10</title>
+  <style>
+    .country-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .country-list li {
+      cursor: pointer;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+
+    .country-list li:hover {
+      background-color: #f2f2f2;
+    }
+
+    .country-info {
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .country-details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .country-flag img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .country-data {
+      margin-left: 10px;
+      flex-grow: 1;
+    }
+
+    .data-label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="search-box" />
+  <ul class="country-list"></ul>
+  <div class="country-info"></div>
+
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>
-

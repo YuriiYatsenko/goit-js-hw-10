@@ -4,6 +4,7 @@ export const createCountryInfo = (country, container) => {
   const languagesList = Object.values(languages).join(', ');
 
   const flagMarkup = flags && flags.svg ? `<img src="${flags.svg}" alt="Flag of ${common}" />` : '';
+  
 
   const markup = `
     <h2>${common}</h2>
